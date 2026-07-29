@@ -1,327 +1,217 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mega Lanches</title>
-  <link rel="shortcut icon" href="imagens.logo/favicon.30.ico" type="image/x-icon">
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Vendas</title>
   <style>
-  body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff8e1;
-    }
-header {
-    background: linear-gradient(95deg, #ff6f00, #ffca28);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
-}
-header img {
-      height: 70px;
-      width: auto;
-    }
- nav ul {
-      list-style: none;
-      display: flex;
-      gap: 22px;
-      margin: 0;
-      padding: 0;
-    }
-nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: 0.3s;
-    }
- nav ul li a:hover {
-      color: #fff59d;
-      text-shadow: 0 0 5px #fff;
-    }
-.hero {
-      background: linear-gradient(180deg, #fff9c4, #ffe082);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
-    }
-.hero h1 {
-      font-size: 72px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #ff1744, #ff9100, #ffeb3b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 900;
-      text-transform: uppercase;
-      animation: glow 2s infinite alternate;
-    }
- .hero p {
-      font-size: 26px;
-      max-width: 1000px;
-      line-height: 1.8;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 30px;
-      border-radius: 20px;
-      color: #d84315;
-      font-weight: 600;
-      box-shadow: 0 6px 20px rgba(255, 111, 0, 0.4);
-      animation: slideUp 2s ease-in-out;
-    }
-@keyframes glow {
-      from { text-shadow: 0 0 10px #ff9100, 0 0 20px #ffeb3b; }
-      to { text-shadow: 0 0 20px #ff5722, 0 0 40px #ffeb3b; }
-    }
- @keyframes slideUp {
-      from {transform: translateY(50px); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
-    }
-       .galeria {
-  display: flex;  
-  justify-content: center;  
-  flex-wrap: wrap;            
-  gap: 10px;            
-}
-.galeria img {
-  border-radius: 8px;        
-}
-.galeria img {
-      width: 320px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-.galeria img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(255, 111, 0, 0.6);
-    }
-
-.preços {
-      background-color: #fffde7;
-      padding: 50px;
-      text-align: center;
-    }
-.preços h2 {
-      font-size: 48px;
-      color: #d84315;
-      margin-bottom: 30px;
-      border-bottom: 3px solid #ff6f00;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-.cardapio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 60px 40px;
-}
-
-.lanche {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.lanche:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(255, 111, 0, 0.4);
-}
-
-.lanche img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.lanche h3 {
-  font-size: 20px;
-  color: #ff6f00;
-  margin: 12px 0 6px;
-  font-weight: 700;
-}
-
-.lanche p {
-  font-size: 15px;
-  color: #4e342e;
-  margin: 0 15px 8px;
-  line-height: 1.4;
-  text-align: center;
-}
-
-.lanche .preco {
-  font-size: 18px;
-  font-weight: bold;
-  color: #d84315;
-  margin: 10px 0;
-  background: #fff8e1;
-  padding: 6px 12px;
-  border-radius: 8px;
-}
-
-.preço {
-      font-size: 20px;
-      font-weight: bold;
-      color: #d84315;
-    }
- .contato {
-      background-color: #fffde7;
-    text-align: center;
-    padding: 50px 50px 0 50px;
-
-    }
-.contato h2 {
-      font-size: 42px;
-      color: #d84315;
-      margin-bottom: 20px;
-    }
-.links a {
-      display: inline-block;
-      margin: 30px;
-      text-decoration: none;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-.instagram,
-.maps {
-    background-color: #ff6f00 ;
-    color: #fff;
-    border: none;
-}
-.instagram:hover,
-.maps:hover {
-    background-color: #e65100 ;
-}
-/* Rodapé */
-.footer{
-    position: relative;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(95deg, #ff6f00, #ffca28);
-    color: white;
-    text-align: center;
-    padding: 25px 0;
-    margin: 0;
-    box-sizing: border-box;
-    box-shadow: 0 -4px 10px rgba(0,0,0,.2);
-}
-
-.footer p{
-    margin: 0;
-    font-size: 22px;
+  body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: linear-gradient(135deg, #007bff, #00c6ff); 
+    margin: 0; 
+    padding: 20px; 
+    color: #333;
+  }
+  .container { 
+    max-width: 500px; 
+    margin: auto; 
+    background: #f9f9f9; /* Cinza claro em vez de branco */
+    padding: 20px; 
+    border-radius: 16px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); 
+  }
+  h2 { 
+    text-align: center; 
+    font-size: 1.6em; 
+    color: #007bff; 
+    margin-bottom: 15px;
+  }
+  input, button { 
+    width: 100%; 
+    padding: 14px; 
+    margin-bottom: 12px; 
+    border-radius: 10px; 
+    border: 1px solid #ddd; 
+    font-size: 1em;
+  }
+  input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 5px #007bff; }
+  button { 
+    background: #007bff; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
     font-weight: bold;
-}
-  </style>
+    transition: transform 0.2s, background 0.3s; 
+  }
+  button:hover { background: #0056b3; transform: scale(1.03); }
+
+  /* Cartões coloridos */
+  .card-dia { 
+    background: #e6f0ff; /* Azul suave */
+    padding: 15px; 
+    border-radius: 12px; 
+    margin-bottom: 10px; 
+    text-align: center; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .card-mes { 
+    background: #e8f5e9; /* Verde claro */
+    padding: 15px; 
+    border-radius: 12px; 
+    margin-bottom: 15px; 
+    text-align: center; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .card strong { color: #007bff; }
+
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 15px; 
+    font-size: 0.9em;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td { 
+    border: 1px solid #eee; 
+    padding: 10px; 
+    text-align: center; 
+  }
+  th { background: #007bff; color: white; }
+  .acoes { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+  .acoes button { 
+    width: auto; 
+    padding: 6px 12px; 
+    font-size: 0.85em; 
+    border-radius: 8px;
+  }
+  .mensagem { text-align: center; font-weight: bold; color: green; margin-bottom: 10px; }
+
+  /* Responsividade estilo app */
+  @media (max-width: 480px) {
+    .container { padding: 15px; }
+    h2 { font-size: 1.3em; }
+    input, button { font-size: 1em; padding: 12px; }
+    table, th, td { font-size: 0.8em; }
+    .acoes { flex-direction: column; }
+    .acoes button { width: 100%; }
+  }
+</style>
+
 </head>
 <body>
-  <header>
-    <img src="imagens.logo/imagem.logo.png.png" alt="Logo Mega Lanches">
-    <nav>
-      <ul>
-        <li><a href="#inicio"><strong>Início</strong></a></li>
-        <li><a href="#preço"><strong>Cardapio<br>Preço</strong></a></li>
-        <li><a href="#contato"><strong>Contato</strong></a></li>
-      </ul>
-    </nav>
-  </header>
-<section class="hero" id="inicio">
-<div class="historia">
-    <div class="texto">
-      <h1>Nossa História</h1>
-      <p>
-        Em 2010, Edgard e sua esposa Elaine deram início a um sonho ao adquirir um trailler simples.
-        Com dedicação e amor, transformaram esse espaço em um ponto de encontro cheio de sabor e alegria.
-        Assim nasceu o <strong>Mega Lanches</strong>, onde cada hambúrguer carrega a essência dessa jornada feita de família, amizade e paixão pela boa comida.
-        Hoje, somos mais do que um estabelecimento: somos parte da vida e das memórias de nossos clientes.
-      </p>
-  </div>
-</section>
-<!-- Galeria com fotos -->
-  <section class="galeria" id="galeria">
-    <img src="imagens.logo/imagem.treiler.png"  alt="Foto do trailer">
-    <img src="imagens.logo/foto treiler.jpg"  alt="Foto do trailer">
-    </section>
-<!-- Cardápio Completo -->
-<section class="preços" id="preço">
-  <h2>Cardápio e Preços</h2>
-  <div class="cardapio">
+<div class="container">
+  <h2>📊 Sistema de Vendas</h2>
+  <p id="mensagem" class="mensagem"></p>
+  
+  <input type="number" step="0.01" id="valor" placeholder="💰 Valor da Venda (R$)" required>
+  <input type="date" id="data" max="2035-12-31">
+  <button onclick="registrarVenda()">➕ Registrar Venda</button>
 
-    <!-- Lanches de Carne -->
-    <div class="lanche"><img src="imagens.sati.sanduiches/americano.png"><h3>Americano</h3><p>Ingredientes: pão, queijo, presunto, maionese, tomate, alface, ovo.</p><p class="preco">R$ 19,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/americano.bencon.png"><h3>Americano Bacon</h3><p>Ingredientes: pão, queijo, presunto, maionese, tomate, alface, ovo, bacon.</p><p class="preco">R$ 22,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/imagem.simples.png"><h3>X Simples</h3><p>Ingredientes: pão, hambúrguer, queijo.</p><p class="preco">R$ 13,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/imagem.maionese.png"><h3>X Maionese</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese.</p><p class="preco">R$ 13,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/imagem.xsalasda.png"><h3>X Salada</h3><p>Ingredientes: pão, hambúrguer, queijo, alface, tomate, maionese.</p><p class="preco">R$ 16,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/imagem.xsalda.egg.png"><h3>X Salada Egg</h3><p>Ingredientes: pão, hambúrguer, queijo, alface, tomate, ovo, maionese.</p><p class="preco">R$ 17,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/x.bencom.png"><h3>X Bacon</h3><p>Ingredientes: pão, hambúrguer, queijo, bacon, maionese, tomate, alface.</p><p class="preco">R$ 20,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.becom.egg.png"><h3>X Bacon Egg</h3><p>Ingredientes: pão, hambúrguer, queijo, bacon, ovo, maionese, tomate alface.</p><p class="preco">R$ 21,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/xespecial.png"><h3>X Especial</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface, bacon, ovo, presunto.</p><p class="preco">R$ 23,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/x.tudo.png"><h3>X Tudo</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface, bacon, ovo, presunto, milho, batata palha.</p><p class="preco">R$ 25,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/x.megão.png"><h3>Megão</h3><p>Ingredientes: dupla hambúrguer, queijo, maionese, tomate, alface, bacon, duplo ovo, presunto, batata palha, catupiry, milho.</p><p class="preco">R$ 35,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/bauru.png"><h3>Bauru</h3><p>Ingredientes: pão, presunto, queijo, alface, tomate, maionese.</p><p class="preco">R$ 18,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/laçador.png"><h3>Laçador</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface.</p><p class="preco">R$ 16,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/misto.png"><h3>Misto</h3><p>Ingredientes: pão, presunto, queijo.</p><p class="preco">R$ 17,00</p></div>
-
-    <!-- Lanches de Frango -->
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.simples.png"><h3>Filé Simples</h3><p>Ingredientes: pão, filé de frango, queijo.</p><p class="preco">R$ 15,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.maionese.png"><h3>Filé Maionese</h3><p>Ingredientes: pão, frango, queijo, maionese.</p><p class="preco">R$ 15,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/filé.salada.png"><h3>Filé Salada</h3><p>Ingredientes: pão, filé de frango, queijo, alface, tomate, maionese.</p><p class="preco">R$ 18,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.salada.egg.png"><h3>Filé Salada Egg</h3><p>Ingredientes: pão, filé de frango, queijo, alface, tomate, ovo.</p><p class="preco">R$ 19,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.becom (2).png"><h3>Filé Bacon</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, maionese, tomate, ovo, alface.</p><p class="preco">R$ 23,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.becom.egg.png"><h3>Filé Bacon Egg</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, maionese.</p><p class="preco">R$ 25,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.especial.jpeg"><h3>Filé Especial</h3><p>Ingredientes: pão, filé de frango, queijo, presunto, maionese, tomate, alface, ovo.</p><p class="preco">R$ 27,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/file.tudo.png"><h3>Filé Tudo</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, batata palha, presunto, milho, maionese.</p><p class="preco">R$ 29,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/filé.megão.png"><h3>Filé Megão</h3><p>Ingredientes: pão, dupla filé de frango, queijo, bacon, presunto, duplo ovo, batata palha, maionese, catupiry, milho.</p><p class="preco">R$ 38,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/filé.laçador.png"><h3>Filé Laçador</h3><p>Ingredientes: pão,filé de frago, queijo, maionese, tomate, alface, milho.</p><p class="preco">R$ 20,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/filé.mega.jpg"><h3>Filé Mega</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, batata palha, presunto, milho, catupiry, maionese.</p><p class="preco">R$ 30,00</p></div>
-    <div class="lanche"><img src="imagens.sati.sanduiches/frango.super.png"><h3>Filé Super</h3><p>Ingredientes: pão, filé de frango, queijo, catupiry, alface, milho, maionese.</p><p class="preco">R$ 20,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/filé.2.quejos.png"><h3>Filé 2 queijos</h3><p>Ingredientes: pão, filé de frango, queijo, catupiry, alface, milho, maionese.</p><p class="preco">R$ 23,00</p></div>
-  </section>
-<section class="contato" id="contato">
-  <h2>Contato e Localização</h2>
-<!-- Horário de funcionamento -->
-  <p style="font-size:18px; color:#5d4037; font-weight:bold; margin-top:15px;">
-    ⏰ Horário de funcionamento: Segunda a Domingo, a partir das 19h
-  </p>
-<p>Siga-nos nas redes sociais e venha nos visitar!</p>
-  <div class="links">
-    <!-- Ícone do Instagram -->
-   <a href="https://www.instagram.com/mega_lanches_2010/?__pwa=1#" target="_blank" class="instagram">
-      <img src="imagens.logo/instagram.png" alt="Instagram" style="width:30px; vertical-align:middle; margin-right:8px;">Instagram
-      
-  <!-- Ícone do Google Maps -->
-    <a href="https://www.google.com/maps/place/Pra%C3%A7a+Dr.+Trist%C3%A3o+Nogueira,+63+-+Centro,+Tr%C3%AAs+Pontas+-+MG,+37190-000,+Brasil/@-21.3684284,-45.5123080,19z" target="_blank" class="maps">
-      <img src="imagens.logo/Google.Maps.webp" alt="Google Maps" style="width:30px; vertical-align:middle; margin-right:8px;">
-      Google Maps
-    </a>
+  <div class="card">
+    <p><strong>Hoje:</strong> R$ <span id="totalDia">0,00</span></p>
+    <p><strong>Mês:</strong> R$ <span id="totalMes">0,00</span></p>
   </div>
-</section>   
-<!-- Ródapé -->
-<footer class="footer">
-    <p>&copy; Mega Lanches <span id="ano"></span></p>
-</footer>
+
+  <label for="mesFiltro"><strong>📅 Escolha o mês:</strong></label>
+  <input type="month" id="mesFiltro" max="2035-12" onchange="atualizarRelatorio()">
+
+  <h3 style="text-align:center; color:#007bff;">📑 Vendas do mês</h3>
+  <table id="tabelaVendas">
+    <tr>
+      <th>#</th>
+      <th>Data</th>
+      <th>Valor (R$)</th>
+      <th>Ações</th>
+    </tr>
+  </table>
+</div>
 
 <script>
-document.getElementById("ano").textContent = new Date().getFullYear();
-</script>
+  let vendas = JSON.parse(localStorage.getItem("vendas")) || [];
 
+  function registrarVenda() {
+    const valor = parseFloat(document.getElementById("valor").value);
+    const data = document.getElementById("data").value || new Date().toISOString().split("T")[0];
+    if (isNaN(valor) || valor <= 0) {
+      alert("Digite um valor válido!");
+      return;
+    }
+    vendas.push({ data: data, valor: valor });
+    localStorage.setItem("vendas", JSON.stringify(vendas));
+    document.getElementById("mensagem").innerText = "✅ Venda registrada!";
+    atualizarRelatorio();
+    document.getElementById("valor").value = "";
+    document.getElementById("data").value = "";
+  }
+
+  function editarVenda(indice) {
+    const novoValor = prompt("Digite o novo valor:", vendas[indice].valor);
+    const novaData = prompt("Digite a nova data (AAAA-MM-DD):", vendas[indice].data);
+    if (novoValor && novaData) {
+      vendas[indice].valor = parseFloat(novoValor);
+      vendas[indice].data = novaData;
+      localStorage.setItem("vendas", JSON.stringify(vendas));
+      atualizarRelatorio();
+      alert("✏️ Venda atualizada!");
+    }
+  }
+
+  function removerVenda(indice) {
+    if (confirm("Tem certeza que deseja remover esta venda?")) {
+      vendas.splice(indice, 1);
+      localStorage.setItem("vendas", JSON.stringify(vendas));
+      atualizarRelatorio();
+      alert("🗑️ Venda removida!");
+    }
+  }
+
+  function atualizarRelatorio() {
+    const hoje = new Date().toISOString().split("T")[0];
+    const filtro = document.getElementById("mesFiltro").value;
+    let mesAtual, anoAtual;
+    if (filtro) {
+      const partes = filtro.split("-");
+      anoAtual = parseInt(partes[0]);
+      mesAtual = parseInt(partes[1]);
+    } else {
+      mesAtual = new Date().getMonth() + 1;
+      anoAtual = new Date().getFullYear();
+    }
+
+    let totalDia = 0;
+    let totalMes = 0;
+
+    const tabela = document.getElementById("tabelaVendas");
+    tabela.innerHTML = "<tr><th>#</th><th>Data</th><th>Valor (R$)</th><th>Ações</th></tr>";
+
+    vendas.forEach((venda, i) => {
+      const dataVenda = new Date(venda.data);
+      const mesVenda = dataVenda.getMonth() + 1;
+      const anoVenda = dataVenda.getFullYear();
+
+      if (venda.data === hoje) totalDia += venda.valor;
+      if (mesVenda === mesAtual && anoVenda === anoAtual) {
+        totalMes += venda.valor;
+        tabela.innerHTML += `
+          <tr>
+            <td>${i+1}</td>
+            <td>${venda.data}</td>
+            <td>R$ ${venda.valor.toFixed(2).replace(".", ",")}</td>
+            <td class="acoes">
+              <button onclick="editarVenda(${i})">✏️ Editar</button>
+              <button onclick="removerVenda(${i})">🗑️ Remover</button>
+            </td>
+          </tr>`;
+      }
+    });
+
+    document.getElementById("totalDia").innerText = totalDia.toFixed(2).replace(".", ",");
+    document.getElementById("totalMes").innerText = totalMes.toFixed(2).replace(".", ",");
+  }
+
+  atualizarRelatorio();
+</script>
 </body>
 </html>
+
