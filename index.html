@@ -12,7 +12,6 @@
       background-color: #fff8e1;
     }
 
-    /* Cabeçalho */
     header {
       background: linear-gradient(95deg, #ff6f00, #ffca28);
       display: flex;
@@ -53,7 +52,6 @@
       text-shadow: 0 0 5px #fff;
     }
 
-    /* Seção Hero / Nossa História */
     .hero {
       background: linear-gradient(180deg, #fff9c4, #ffe082);
       min-height: 100vh;
@@ -62,23 +60,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 100px 40px 40px 40px; /* Padding top para compensar o header fixo */
-      box-sizing: border-box;
-    }
-
-    .historia {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      width: 100%;
-      max-width: 1300px;
-      box-sizing: border-box;
-    }
-
-    .historia .texto {
-      flex: 1;
-      max-width: 700px;
+      padding: 40px;
     }
 
     .hero h1 {
@@ -94,6 +76,7 @@
 
     .hero p {
       font-size: 26px;
+      max-width: 1000px;
       line-height: 1.8;
       background: rgba(255, 255, 255, 0.95);
       padding: 30px;
@@ -104,32 +87,37 @@
       animation: slideUp 2s ease-in-out;
     }
 
-    .historia-foto {
-      flex: 1;
-      max-width: 500px;
-    }
-
-    .historia-foto img {
-      width: 100%;
-      max-width: 500px;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      border: 5px solid #fff;
-    }
-
     @keyframes glow {
       from { text-shadow: 0 0 10px #ff9100, 0 0 20px #ffeb3b; }
       to { text-shadow: 0 0 20px #ff5722, 0 0 40px #ffeb3b; }
     }
 
     @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
     }
 
-    /* Cardápio e Preços */
+    .galeria {
+      display: flex;  
+      justify-content: center;  
+      flex-wrap: wrap;            
+      gap: 10px;            
+    }
+
+    .galeria img {
+      width: 320px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(255, 111, 0, 0.6);
+    }
+
     .preços {
       background-color: #fffde7;
       padding: 50px;
@@ -149,7 +137,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      padding: 20px 40px;
+      padding: 60px 40px;
     }
 
     .lanche {
@@ -193,13 +181,19 @@
       font-size: 18px;
       font-weight: bold;
       color: #d84315;
-      margin: 10px 0 15px;
+      margin: 10px 0;
       background: #fff8e1;
       padding: 6px 12px;
       border-radius: 8px;
     }
 
-    /* Carrossel de Refrigerantes */
+    .preço {
+      font-size: 20px;
+      font-weight: bold;
+      color: #d84315;
+    }
+
+    /* REFRIGERANTES COM SETAS */
     .refrigerantes-wrapper {
       position: relative;
       width: 100%;
@@ -250,11 +244,10 @@
     .seta-esquerda { left: 5px; }
     .seta-direita { right: 5px; }
 
-    /* Contato */
     .contato {
       background-color: #fffde7;
       text-align: center;
-      padding: 50px 50px 30px 50px;
+      padding: 50px 50px 0 50px;
     }
 
     .contato h2 {
@@ -277,6 +270,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      margin: 30px;
       text-decoration: none;
       color: #fff;
       padding: 12px 25px;
@@ -285,16 +279,19 @@
       transition: 0.3s;
     }
 
-    .instagram, .maps {
+    .instagram,
+    .maps {
       background-color: #ff6f00;
       color: #fff;
+      border: none;
     }
 
-    .instagram:hover, .maps:hover {
+    .instagram:hover,
+    .maps:hover {
       background-color: #e65100;
     }
 
-    /* Rodapé */
+    /* Rodapé (Idêntico ao Cabeçalho em Cores e Estilo) */
     .footer {
       position: relative;
       left: 0;
@@ -314,39 +311,61 @@
       font-weight: bold;
     }
 
-    /* Responsividade */
+    /* FOTO DO TRAILER NA NOSSA HISTÓRIA */
+    .historia {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+      max-width: 1300px;
+      box-sizing: border-box;
+    }
+
+    .historia .texto {
+      flex: 1;
+      max-width: 700px;
+    }
+
+    .historia-foto {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .historia-foto img {
+      width: 100%;
+      max-width: 500px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      border: 5px solid #fff;
+    }
+
     @media (max-width: 768px) {
       .historia {
         flex-direction: column;
         gap: 25px;
       }
 
-      .historia .texto, .historia-foto {
+      .historia .texto,
+      .historia-foto {
         max-width: 100%;
       }
 
       .historia-foto img {
         height: 280px;
       }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
     }
+
   </style>
 </head>
 <body>
-
-  <!-- Cabeçalho -->
   <header>
     <img src="imagens.logo/imagem.logo.png.png" alt="Logo Mega Lanches">
     <nav>
       <ul>
-        <li><a href="#Inicio"><strong>Início</strong></a></li>
+        <li><a href="#Ínicio"><strong>Ínicio</strong></a></li>
         <li><a href="#Lanches"><strong>Cardápio</strong></a></li>
         <li><a href="#Refrigerantes"><strong>Refrigerantes</strong></a></li>
         <li><a href="#contato"><strong>Contato</strong></a></li>
@@ -354,13 +373,12 @@
     </nav>
   </header>
 
-  <!-- Seção Inicial (Nossa História) -->
-  <section class="hero" id="Inicio">
+  <section class="hero" id="Ínicio">
     <div class="historia">
       <div class="texto">
         <h1>Nossa História</h1>
         <p>
-          Em 2010, Edgard e sua esposa Elaine deram início a um sonho ao adquirir um trailer simples.
+          Em 2010, Edgard e sua esposa Elaine deram início a um sonho ao adquirir um trailler simples.
           Com dedicação e amor, transformaram esse espaço em um ponto de encontro cheio de sabor e alegria.
           Assim nasceu o <strong>Mega Lanches</strong>, onde cada hambúrguer carrega a essência dessa jornada feita de família, amizade e paixão pela boa comida.
           Hoje, somos mais do que um estabelecimento: somos parte da vida e das memórias de nossos clientes.
@@ -373,40 +391,42 @@
     </div>
   </section>
 
+  
+
   <!-- Cardápio Completo -->
   <section class="preços" id="Lanches">
     <h2>Cardápio</h2>
     <div class="cardapio">
       <!-- Lanches de Carne -->
-      <div class="lanche"><img src="imagens.sati.sanduiches/americano.png" alt="Americano"><h3>Americano</h3><p>Ingredientes: pão, queijo, presunto, maionese, tomate, alface, ovo.</p><p class="preco">R$ 19,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/americano.bencon.png" alt="Americano Bacon"><h3>Americano Bacon</h3><p>Ingredientes: pão, queijo, presunto, maionese, tomate, alface, ovo, bacon.</p><p class="preco">R$ 22,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.simples.png" alt="X Simples"><h3>X Simples</h3><p>Ingredientes: pão, hambúrguer, queijo.</p><p class="preco">R$ 13,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.maionese.png" alt="X Maionese"><h3>X Maionese</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese.</p><p class="preco">R$ 13,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.xsalasda.png" alt="X Salada"><h3>X Salada</h3><p>Ingredientes: pão, hambúrguer, queijo, alface, tomate, maionese.</p><p class="preco">R$ 16,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.xsalda.egg.png" alt="X Salada Egg"><h3>X Salada Egg</h3><p>Ingredientes: pão, hambúrguer, queijo, alface, tomate, ovo, maionese.</p><p class="preco">R$ 17,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/x.bencom.png" alt="X Bacon"><h3>X Bacon</h3><p>Ingredientes: pão, hambúrguer, queijo, bacon, maionese, tomate, alface.</p><p class="preco">R$ 20,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.becom.egg.png" alt="X Bacon Egg"><h3>X Bacon Egg</h3><p>Ingredientes: pão, hambúrguer, queijo, bacon, ovo, maionese, tomate, alface.</p><p class="preco">R$ 21,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/xespecial.png" alt="X Especial"><h3>X Especial</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface, bacon, ovo, presunto.</p><p class="preco">R$ 23,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/x.tudo.png" alt="X Tudo"><h3>X Tudo</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface, bacon, ovo, presunto, milho, batata palha.</p><p class="preco">R$ 25,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/x.megão.png" alt="Megão"><h3>Megão</h3><p>Ingredientes: dupla hambúrguer, queijo, maionese, tomate, alface, bacon, duplo ovo, presunto, batata palha, catupiry, milho.</p><p class="preco">R$ 35,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/bauru.png" alt="Bauru"><h3>Bauru</h3><p>Ingredientes: pão, presunto, queijo, alface, tomate, maionese.</p><p class="preco">R$ 18,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/laçador.png" alt="Laçador"><h3>Laçador</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface.</p><p class="preco">R$ 16,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/misto.png" alt="Misto"><h3>Misto</h3><p>Ingredientes: pão, presunto, queijo.</p><p class="preco">R$ 17,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/americano.png"><h3>Americano</h3><p>Ingredientes: pão, queijo, presunto, maionese, tomate, alface, ovo.</p><p class="preco">R$ 19,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/americano.bencon.png"><h3>Americano Bacon</h3><p>Ingredientes: pão, queijo, presunto, maionese, tomate, alface, ovo, bacon.</p><p class="preco">R$ 22,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.simples.png"><h3>X Simples</h3><p>Ingredientes: pão, hambúrguer, queijo.</p><p class="preco">R$ 13,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.maionese.png"><h3>X Maionese</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese.</p><p class="preco">R$ 13,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.xsalasda.png"><h3>X Salada</h3><p>Ingredientes: pão, hambúrguer, queijo, alface, tomate, maionese.</p><p class="preco">R$ 16,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/imagem.xsalda.egg.png"><h3>X Salada Egg</h3><p>Ingredientes: pão, hambúrguer, queijo, alface, tomate, ovo, maionese.</p><p class="preco">R$ 17,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/x.bencom.png"><h3>X Bacon</h3><p>Ingredientes: pão, hambúrguer, queijo, bacon, maionese, tomate, alface.</p><p class="preco">R$ 20,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.becom.egg.png"><h3>X Bacon Egg</h3><p>Ingredientes: pão, hambúrguer, queijo, bacon, ovo, maionese, tomate alface.</p><p class="preco">R$ 21,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/xespecial.png"><h3>X Especial</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface, bacon, ovo, presunto.</p><p class="preco">R$ 23,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/x.tudo.png"><h3>X Tudo</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface, bacon, ovo, presunto, milho, batata palha.</p><p class="preco">R$ 25,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/x.megão.png"><h3>Megão</h3><p>Ingredientes: dupla hambúrguer, queijo, maionese, tomate, alface, bacon, duplo ovo, presunto, batata palha, catupiry, milho.</p><p class="preco">R$ 35,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/bauru.png"><h3>Bauru</h3><p>Ingredientes: pão, presunto, queijo, alface, tomate, maionese.</p><p class="preco">R$ 18,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/laçador.png"><h3>Laçador</h3><p>Ingredientes: pão, hambúrguer, queijo, maionese, tomate, alface.</p><p class="preco">R$ 16,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/misto.png"><h3>Misto</h3><p>Ingredientes: pão, presunto, queijo.</p><p class="preco">R$ 17,00</p></div>
 
       <!-- Lanches de Frango -->
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.simples.png" alt="Filé Simples"><h3>Filé Simples</h3><p>Ingredientes: pão, filé de frango, queijo.</p><p class="preco">R$ 15,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.maionese.png" alt="Filé Maionese"><h3>Filé Maionese</h3><p>Ingredientes: pão, frango, queijo, maionese.</p><p class="preco">R$ 15,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/filé.salada.png" alt="Filé Salada"><h3>Filé Salada</h3><p>Ingredientes: pão, filé de frango, queijo, alface, tomate, maionese.</p><p class="preco">R$ 18,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.salada.egg.png" alt="Filé Salada Egg"><h3>Filé Salada Egg</h3><p>Ingredientes: pão, filé de frango, queijo, alface, tomate, ovo.</p><p class="preco">R$ 19,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.becom (2).png" alt="Filé Bacon"><h3>Filé Bacon</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, maionese, tomate, ovo, alface.</p><p class="preco">R$ 23,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.becom.egg.png" alt="Filé Bacon Egg"><h3>Filé Bacon Egg</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, maionese.</p><p class="preco">R$ 25,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.especial.jpeg" alt="Filé Especial"><h3>Filé Especial</h3><p>Ingredientes: pão, filé de frango, queijo, presunto, maionese, tomate, alface, ovo.</p><p class="preco">R$ 27,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/file.tudo.png" alt="Filé Tudo"><h3>Filé Tudo</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, batata palha, presunto, milho, maionese.</p><p class="preco">R$ 29,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/filé.megão.png" alt="Filé Megão"><h3>Filé Megão</h3><p>Ingredientes: pão, dupla filé de frango, queijo, bacon, presunto, duplo ovo, batata palha, maionese, catupiry, milho.</p><p class="preco">R$ 38,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/filé.laçador.png" alt="Filé Laçador"><h3>Filé Laçador</h3><p>Ingredientes: pão, filé de frango, queijo, maionese, tomate, alface, milho.</p><p class="preco">R$ 20,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/filé.mega.jpg" alt="Filé Mega"><h3>Filé Mega</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, batata palha, presunto, milho, catupiry, maionese.</p><p class="preco">R$ 30,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/frango.super.png" alt="Filé Super"><h3>Filé Super</h3><p>Ingredientes: pão, filé de frango, queijo, catupiry, alface, milho, maionese.</p><p class="preco">R$ 20,00</p></div>
-      <div class="lanche"><img src="imagens.sati.sanduiches/filé.2.quejos.png" alt="Filé 2 queijos"><h3>Filé 2 queijos</h3><p>Ingredientes: pão, filé de frango, queijo, catupiry, alface, milho, maionese.</p><p class="preco">R$ 23,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.simples.png"><h3>Filé Simples</h3><p>Ingredientes: pão, filé de frango, queijo.</p><p class="preco">R$ 15,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.maionese.png"><h3>Filé Maionese</h3><p>Ingredientes: pão, frango, queijo, maionese.</p><p class="preco">R$ 15,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/filé.salada.png"><h3>Filé Salada</h3><p>Ingredientes: pão, filé de frango, queijo, alface, tomate, maionese.</p><p class="preco">R$ 18,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.salada.egg.png"><h3>Filé Salada Egg</h3><p>Ingredientes: pão, filé de frango, queijo, alface, tomate, ovo.</p><p class="preco">R$ 19,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.becom (2).png"><h3>Filé Bacon</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, maionese, tomate, ovo, alface.</p><p class="preco">R$ 23,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.becom.egg.png"><h3>Filé Bacon Egg</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, maionese.</p><p class="preco">R$ 25,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.especial.jpeg"><h3>Filé Especial</h3><p>Ingredientes: pão, filé de frango, queijo, presunto, maionese, tomate, alface, ovo.</p><p class="preco">R$ 27,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/file.tudo.png"><h3>Filé Tudo</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, batata palha, presunto, milho, maionese.</p><p class="preco">R$ 29,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/filé.megão.png"><h3>Filé Megão</h3><p>Ingredientes: pão, dupla filé de frango, queijo, bacon, presunto, duplo ovo, batata palha, maionese, catupiry, milho.</p><p class="preco">R$ 38,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/filé.laçador.png"><h3>Filé Laçador</h3><p>Ingredientes: pão,filé de frago, queijo, maionese, tomate, alface, milho.</p><p class="preco">R$ 20,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/filé.mega.jpg"><h3>Filé Mega</h3><p>Ingredientes: pão, filé de frango, queijo, bacon, ovo, alface, tomate, batata palha, presunto, milho, catupiry, maionese.</p><p class="preco">R$ 30,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/frango.super.png"><h3>Filé Super</h3><p>Ingredientes: pão, filé de frango, queijo, catupiry, alface, milho, maionese.</p><p class="preco">R$ 20,00</p></div>
+      <div class="lanche"><img src="imagens.sati.sanduiches/filé.2.quejos.png"><h3>Filé 2 queijos</h3><p>Ingredientes: pão, filé de frango, queijo, catupiry, alface, milho, maionese.</p><p class="preco">R$ 23,00</p></div>
     </div>
   </section>
 
@@ -421,54 +441,63 @@
           <img src="imagem.refrigerante/coca.lata.jpg" alt="Coca-Cola Lata">
           <h3>Coca-Cola Lata</h3>
           <p>350ml gelada.</p>
+    
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/guarana.lata.webp" alt="Guaraná Lata">
           <h3>Guaraná Lata</h3>
           <p>350ml gelada.</p>
+
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/fanta.laranja.lata.jpg" alt="Fanta Laranja Lata">
           <h3>Fanta Laranja Lata</h3>
           <p>350ml gelada.</p>
+     
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/coca.600.jpg" alt="Coca-Cola 600ml">
           <h3>Coca-Cola 600ml</h3>
           <p>600ml gelada.</p>
+      
         </div>
 
         <div class="lanche refrigerante">
-          <img src="imagem.refrigerante/guarana.600.jpg" alt="Guaraná 600ml">
+          <img src="imagem.refrigerante/guarana.600.jpg"alt="Guaraná 600ml">
           <h3>Guaraná 600ml</h3>
           <p>600ml gelada.</p>
+         
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/fanta.laranja.600.jpg" alt="Fanta Laranja 600ml">
           <h3>Fanta Laranja 600ml</h3>
           <p>600ml gelada.</p>
+      
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/coca 2 l.jpg" alt="Coca-Cola 2 Litros">
           <h3>Coca-Cola 2L</h3>
           <p>Garrafa 2 litros gelada.</p>
+         
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/guarana 2l.jpg" alt="Guaraná 2 Litros">
           <h3>Guaraná 2L</h3>
           <p>Garrafa 2 litros gelada.</p>
+         
         </div>
 
         <div class="lanche refrigerante">
           <img src="imagem.refrigerante/fanta.laranja.2l.jpg" alt="Fanta Laranja 2 Litros">
           <h3>Fanta Laranja 2L</h3>
           <p>Garrafa 2 litros gelada.</p>
+    
         </div>
       </div>
 
@@ -476,7 +505,6 @@
     </div>
   </section>
 
-  <!-- Contato e Localização -->
   <section class="contato" id="contato">
     <h2>Contato e Localização</h2>
     <p style="font-size:18px; color:#5d4037; font-weight:bold; margin-top:15px;">
@@ -487,10 +515,10 @@
     </p>
     <p>Siga-nos nas redes sociais e venha nos visitar!</p>
     <div class="links">
-      <a href="https://www.instagram.com/mega_lanches_2010/?__pwa=1#" target="_blank" rel="noopener noreferrer" class="instagram">
+      <a href="https://www.instagram.com/mega_lanches_2010/?__pwa=1#" target="_blank" class="instagram">
         <img src="imagens.logo/instagram.png" alt="Instagram" style="width:30px; vertical-align:middle; margin-right:8px;">Instagram
       </a>
-      <a href="https://www.google.com/maps/place/Pra%C3%A7a+Dr.+Trist%C3%A3o+Nogueira,+63+-+Centro,+Tr%C3%AAs+Pontas+-+MG,+37190-000,+Brasil/@-21.3684284,-45.5123080,19z" target="_blank" rel="noopener noreferrer" class="maps">
+      <a href="https://www.google.com/maps/place/Pra%C3%A7a+Dr.+Trist%C3%A3o+Nogueira,+63+-+Centro,+Tr%C3%AAs+Pontas+-+MG,+37190-000,+Brasil/@-21.3684284,-45.5123080,19z" target="_blank" class="maps">
         <img src="imagens.logo/Google.Maps.webp" alt="Google Maps" style="width:30px; vertical-align:middle; margin-right:8px;">Google Maps
       </a>
     </div>
@@ -501,7 +529,6 @@
     <p>&copy; Mega Lanches <span id="ano"></span></p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.getElementById("ano").textContent = new Date().getFullYear();
 
